@@ -16,7 +16,7 @@ int count_arg(char chr, va_list arg)
 		{"i", use_i},
 		{"d", use_i},
 		{"u", use_u},
-		{"b", use_b},
+		{"b", use_binary},
 		{"o", use_o},
 		{"x", use_hex},
 		{"X", use_HEX},
