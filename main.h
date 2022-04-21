@@ -19,7 +19,7 @@ int (*f)(va_list);
 
 int count_arg(char ch, va_list arg);
 int _putchar(char c);
-int printf(const char *format, ...);
+int _printf(const char *format, ...);
 int _strlen(char *c);
 int print_hexa(unsigned int num, int form);
 void _puts(char *str);

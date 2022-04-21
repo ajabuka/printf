@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * printf - produces output according to output
+ * _printf - produces output according to output
  * @format: argument
  * Return: res
  */
 
-int printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
 /* declare variable and initialize the struct to be used */
 
