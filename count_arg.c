@@ -9,30 +9,30 @@
 
 int count_arg(char chr, va_list arg)
 {
-/* initializing the struct */
-chr_st _char[] = {
-{"c", use_c},
-{"s", use_s},
-{"i", use_i},
-{"d", use_i},
-{"u", use_u},
-{"b", use_binary},
-{"o", use_o},
-{"x", use_hex},
-{"X", use_HEX},
-{"S", use_S},
-{"p", use_p},
-{"r", use_r},
-{"R", use_R},
-{NULL, NULL}
-};
-int j;
+	/*initializing struct*/
+	chr_st _char[] = {
+		{"c", use_c},
+		{"s", use_s},
+		{"i", use_i},
+		{"d", use_i},
+		{"u", use_u},
+		{"b", use_b},
+		{"o", use_o},
+		{"x", use_hex},
+		{"X", use_HEX},
+		{"S", use_S},
+		{"p", use_p},
+		{"r", print_revstr},
+		{"R", print_rot13},
+		{NULL, NULL}
+	};
+	int j;
 
-/* for loop to loop through the struct array */
-for (j = 0; _char[j].str != NULL; j++)
-{
-if (chr == *(_char[j].str))
-return (_char[j].f(arg));
-}
-return (0);
+	/* for loop to loop through the struct array */
+	for (j = 0; _char[j].str != NULL; j++)
+	{
+		if (chr == *(_char[j].str))
+			return (_char[j].f(arg));
+	}
+	return (0);
 }
