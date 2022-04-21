@@ -2,7 +2,7 @@
 
 /**
  * print_revstr - writes the str in reverse
- * @arguments: input string
+ * @arg: input string
  * Return: length of string
  */
 
