@@ -3,31 +3,23 @@
 /**
  * print_revstr - writes the str in reverse
  * @arguments: input string
- * @buf: buffer pointer
- * @ibuf: index for buffer pointer
- * Return: number of chars printed.
+ * Return: length of string
  */
 
-int print_revstr(va_list arguments, char *buf, unsigned int ibuf)
+int print_revstr(va_list arg)
 {
-	char *str;
-	unsigned int i;
-	int j = 0;
-	char nill[] = "(llun)";
+	char *s;
+	int i, len;
 
-	str = va_arg(arguments, char *);
-	if (str == NULL)
-	{
-		for (i = 0; nill[i]; i++)
-			ibuf = handl_buf(buf, nill[i], ibuf);
-		return (6);
-	}
-	for (i = 0; str[i]; i++)
-		;
-	j = i - 1;
-	for (; j >= 0; j--)
-	{
-		ibuf = handl_buf(buf, str[j], ibuf);
-	}
-	return (i);
+	s = va_arg(arg, char *);
+	len = _strlen(s);
+
+	if (s == NULL)
+		s = "(null)";
+	else if (*s == '\0')
+		return (-1);
+	for (i = len - 1; i >= 0 ; i--)
+		_putchar(s[i]);
+
+	return (len);
 }

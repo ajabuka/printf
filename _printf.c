@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 		{
 		_putchar('%');
 		sum++;
-		i++;i
+		i++;
 		continue;
 		}
 		while (format[i + 1] == ' ')
