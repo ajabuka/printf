@@ -13,8 +13,8 @@
  */
 typedef struct ch
 {
-char *str;
-int (*f)(va_list);
+	char *str;
+	int (*f)(va_list);
 } chr_st;
 
 int count_arg(char ch, va_list arg);
