@@ -24,25 +24,25 @@ int _printf(const char *format, ...)
 		{
 		_putchar('%');
 		sum++;
-		i++;
+		i++;i
 		continue;
 		}
-	while (format[i + 1] == ' ')
-		i++;
-	if (format[i + 1] == '\0')
-		return (-1);
+		while (format[i + 1] == ' ')
+			i++;
+		if (format[i + 1] == '\0')
+			return (-1);
 
-	count = count_spec(format[i + 1], arg);
-	if (count == -1 || count != 0)
-		i++;
-	if (count > 0)
-		sum += count;
-	if (count == 0)
-	{
-		_putchar('%');
-		sum++;
+		count = count_arg(format[i + 1], arg);
+		if (count == -1 || count != 0)
+			i++;
+		if (count > 0)
+			sum += count;
+		if (count == 0)
+		{
+			_putchar('%');
+			sum++;
+		}
 	}
-}
-va_end(arg);
-return (sum);
+	va_end(arg);
+	return (sum);
 }
