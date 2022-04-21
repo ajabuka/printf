@@ -1,15 +1,11 @@
 #include "main.h"
-
 /**
  * _printf - produces output according to output
  * @format: argument
  * Return: res
  */
-
 int _printf(const char *format, ...)
 {
-	/* declare variable and initialize the struct to be used */
-
 	int i, sum = 0, count = 0;
 	va_list arg;
 
