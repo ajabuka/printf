@@ -9,14 +9,14 @@
 
 int count_arg(char chr, va_list arg)
 {
-// initializing the struct
+/* initializing the struct */
 chr_st _char[] = {
 {"c", use_c},
 {"s", use_s},
 {"i", use_i},
 {"d", use_i},
 {"u", use_u},
-{"b", use_b},
+{"b", use_binary},
 {"o", use_o},
 {"x", use_hex},
 {"X", use_HEX},
@@ -28,7 +28,7 @@ chr_st _char[] = {
 };
 int j;
 
-// for loop to loop through the struct array
+/* for loop to loop through the struct array */
 for (j = 0; _char[j].str != NULL; j++)
 {
 if (chr == *(_char[j].str))

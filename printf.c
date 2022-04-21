@@ -8,7 +8,7 @@
 
 int printf(const char *format, ...)
 {
-// declare variable and initialize the struct to be used
+/* declare variable and initialize the struct to be used */
 
 int i, sum = 0, count = 0;
 va_list arg;

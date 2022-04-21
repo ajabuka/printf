@@ -17,7 +17,7 @@ char *str;
 int (*f)(va_list);
 } chr_st;
 
-int count_spec(char ch, va_list arg);
+int count_arg(char ch, va_list arg);
 int _putchar(char c);
 int printf(const char *format, ...);
 int _strlen(char *c);
@@ -30,12 +30,12 @@ int use_i(va_list arg);
 int use_d(va_list arg);
 int use_u(va_list arg);
 int use_o(va_list arg);
-int use_b(va_list arg);
+int use_binary(va_list arg);
 int use_hex(va_list arg);
 int use_HEX(va_list arg);
 int use_S(va_list arg);
 int use_p(va_list arg);
-int use_r(va_list arg);
-int use_R(va_list arg);
+int print_revstr(va_list arg);
+int print_rot13(va_list arg);
 
 #endif
