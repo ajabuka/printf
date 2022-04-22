@@ -10,7 +10,7 @@
 
 int handle_flags(char s, mods *f)
 {
-	_Bool modifier = true;
+	bool modifier = true;
 
 	switch (s)
 	{
