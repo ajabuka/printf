@@ -6,7 +6,7 @@
  * Return: true or false
  */
 
-_Bool invalidInputs(const char *p)
+bool invalidInputs(const char *p)
 {
 	/* NULL */
 	if (!p)
