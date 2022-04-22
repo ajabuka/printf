@@ -5,6 +5,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <assert.h>
+#include <stdbool.h>
 
 /**
  * struct modifiers - struct containing flags to "turn on"
@@ -15,9 +17,9 @@
  */
 typedef struct modifiers
 {
-	_Bool plus;
-	_Bool space;
-	_Bool hash;
+	bool plus;
+	bool space;
+	bool hash;
 } mods;
 
 /**
