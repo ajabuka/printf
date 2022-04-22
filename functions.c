@@ -5,7 +5,7 @@
  * _putchar - writes the character c to stdout
  * @c: The character to print
  * Return: On success 1.
- * On error, -1 is returned, and error is set appropriately.
+ * On error, -1 is returned, and errno is set appropriately.
  * Description: _putchar uses a local buffer of 1024 to call write
  * as little as possible
  */
@@ -36,7 +36,6 @@ int _putchar(char c)
 int _puts(char *str)
 {
 	register short i;
-
 	for (i = 0; str[i]; i++)
 		_putchar(str[i]);
 	return (i);
