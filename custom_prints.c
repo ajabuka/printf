@@ -15,6 +15,7 @@ int print_bigS(va_list l, mods *f)
 {
 	register short len = 0;
 	char *res, *s = va_arg(l, char *);
+	char count = 0;
 
 	(void)f;
 	if (!s)
@@ -42,7 +43,7 @@ int print_bigS(va_list l, mods *f)
  * Return: true or false
  */
 
-_Bool isNonAlphaNumeric(char c)
+bool isNonAlphaNumeric(char c)
 {
 	return ((c > 0 && c < 32) || c >= 127);
 }
