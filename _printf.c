@@ -1,48 +1,44 @@
 #include "main.h"
+
 /**
- * _printf - produces output according to output
- * @format: argument
- * Return: res
+ * _printf - produces output according to a format
+ * @format: format string containing the characters and the specifiers
+ * Description: this function will call the get_print() function that will
+ * determine which printing function to call depending on the conversion
+ * specifiers contained into fmt
+ * Return: length of the formatted output string
  */
+
 int _printf(const char *format, ...)
 {
-	int i, sum = 0, count = 0;
-	va_list arg;
+	register short len = 0;
+	int (*printFunc)(va_list, mods *);
+	mods prefixes = PF_INIT;
+	const char *p = format;
+	va_list arguments;
 
-	va_start(arg, format);
-	if (format == NULL)
-		return (-1);
-	for (i = 0; format[i] != '\0'; i++)
+	va_start(arguments, format);
+	assert(invalidInputs(p));
+	for (; *p; p++)
 	{
-		if (format[i] != '%')
+		if (*p == '%')
 		{
-			_putchar(format[i]);
-			sum++;
-			continue;
-		}
-		if (format[i + 1] == '%')
-		{
-		_putchar('%');
-		sum++;
-		i++;
-		continue;
-		}
-		while (format[i + 1] == ' ')
-			i++;
-		if (format[i + 1] == '\0')
-			return (-1);
-
-		count = count_arg(format[i + 1], arg);
-		if (count == -1 || count != 0)
-			i++;
-		if (count > 0)
-			sum += count;
-		if (count == 0)
-		{
-			_putchar('%');
-			sum++;
-		}
+			p++;
+			if (*p == '%')
+			{
+				len += _putchar('%');
+				continue;
+			}
+			while (get_flags(*p, &prefixes))
+				p++;
+			printFunc = get_print(*p);
+			len += (printFunc)
+				? printFunc(arguments, &prefixes)
+				: _printf("%%%c", *p);
+		} else
+			len += _putchar(*p);
 	}
-	va_end(arg);
-	return (sum);
+	_putchar(FLUSH);
+	va_end(arguments);
+	return (len);
 }
