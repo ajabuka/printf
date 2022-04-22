@@ -7,6 +7,20 @@
 #include <stdint.h>
 
 /**
+ * struct modifiers - struct containing flags to "turn on"
+ * when a flag specifier is passed to _printf()
+ * @plus: flag for the '+' character
+ * @space: flag for the ' ' character
+ * @hash: flag for the '#' character
+ */
+typedef struct modifiers
+{
+	_Bool plus;
+	_Bool space;
+	_Bool hash;
+} mods;
+
+/**
  * struct ch - struct ch
  * @str: pointer to string
  * @f: funtion pointer
@@ -37,5 +51,6 @@ int use_S(va_list arg);
 int use_p(va_list arg);
 int print_revstr(va_list arg);
 int print_rot13(va_list arg);
+int handle_flags(char s, mods *f);
 
 #endif
