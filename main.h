@@ -25,9 +25,9 @@
 
 typedef struct modifiers
 {
-	_Bool plus;
-	_Bool space;
-	_Bool hash;
+	bool plus;
+	bool space;
+	bool hash;
 } mods;
 
 /**
@@ -74,12 +74,12 @@ int _puts(char *str);
 int print_rot13(va_list l, mods *f);
 int print_rev(va_list l, mods *f);
 int print_bigS(va_list l, mods *f);
-_Bool isNonAlphaNumeric(char c);
+bool isNonAlphaNumeric(char c);
 /* print_address */
 int print_address(va_list l, mods *f);
 /* print_percent */
 int print_percent(va_list l, mods *f);
 /* assertions */
-_Bool invalidInputs(const char *p);
+bool invalidInputs(const char *p);
 
 #endif
